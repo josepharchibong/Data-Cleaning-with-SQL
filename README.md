@@ -12,5 +12,11 @@
 <br />
 <br />
     This project aims to showcase the power of SQL in cleaning and preparing real-world datasets for analysis. I'll be utilizing a dataset sourced from Kaggle, which contains survey responses from 126 college students regarding their food choices and preferences. However, like many real-world datasets, it's filled with errors and inconsistencies. Using SQL, we'll tackle common data cleaning tasks such as removing duplicates, handling missing values, and standardizing data formats.
-
 </p>
+
+## Data Collection
+<p align="left">
+</p>
+
+## Data Cleaning and Processing
+* Removing empty cells and Missing Data
