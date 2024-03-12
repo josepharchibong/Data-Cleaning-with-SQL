@@ -1,5 +1,5 @@
 # Data-Cleaning-with-SQL
-This repository will contain all the files used in the execution of this project
+<h1> Introduction: </h1>
 
 
 <!-- TABLE OF CONTENTS -->
