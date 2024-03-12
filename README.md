@@ -2,7 +2,7 @@
 
 <div align="center">
   <a href="https://www.geotab.com/CMS-Media-production/Blog/NA/_2020/November/data-cleaning/blog_data_cleaning_hero_@2x.jpg">
-    <img src="images/img00.jpg" alt="Logo" width="80" height="80">
+    <img src="images/img00.jpg" >
   <a/>
 </div>
 
