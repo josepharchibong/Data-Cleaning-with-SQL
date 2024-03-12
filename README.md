@@ -1,9 +1,12 @@
 # Data-Cleaning-with-SQL
 <h3> Introduction: </h3>
 <p align="left">
-  In the world of data analysis, the process of cleaning raw data is often likened to the initial stages of sculpting a masterpiece. Without careful attention to detail and precision,     the final analysis risks being ruined by inaccuracies and inconsistencies. 
+  In the world of data analysis, the process of cleaning raw data is often likened to the initial stages of sculpting a masterpiece. Without careful attention to detail and precision,     the final analysis risks being ruined by inaccuracies and inconsistencies. One of the most powerful tools for this crucial task is SQL (Structured Query Language)
 <br />
-  One of the most powerful tools in a data analysis for this crucial task is SQL (Structured Query Language).
+<br />
+  In this article, we'll explore how to clean messy data using SQL. Our dataset, gathered from Kaggle, captures the food choices and preferences of 126 college students. However, like many real-world datasets, it's filled with errors and inconsistencies.
+
+Using SQL, we'll tackle common data cleaning tasks such as removing duplicates, handling missing values, and standardizing data formats.
   
 </p>
 
