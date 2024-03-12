@@ -1,5 +1,12 @@
 # Data-Cleaning-with-SQL
-<h1> Introduction: </h1>
+<h3> Introduction: </h3>
+<p align="left">
+  In the world of data analysis, the process of cleaning raw data is often likened to the initial stages of sculpting a masterpiece. Without careful attention to detail and precision,     the final analysis risks being ruined by inaccuracies and inconsistencies. 
+<br />
+<br />
+  One of the most powerful tools in a data analysis for this crucial task is SQL (Structured Query Language).
+  
+</p>
 
 
 <!-- TABLE OF CONTENTS -->
