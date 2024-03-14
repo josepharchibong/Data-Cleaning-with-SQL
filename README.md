@@ -1,5 +1,5 @@
 # Food Choices - Data Cleaning with SQL
-**Aim of the Project**: Using SQL to clean the Food Choices data and make it ready for analysis.
+**Aim of the Project**: Using SQL to clean the Food Choices data and make it ready for analysis hfwihbk.
 <br />
 <div align="center">
   <a href="https://www.geotab.com/CMS-Media-production/Blog/NA/_2020/November/data-cleaning/blog_data_cleaning_hero_@2x.jpg">
