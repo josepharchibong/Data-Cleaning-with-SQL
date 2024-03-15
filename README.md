@@ -1,5 +1,5 @@
 # Food Choices - Data Cleaning with SQL
-**Aim of the Project**: Using SQL to clean the Food Choices data and make it ready for analysis hfwihbk.
+**Aim of the Project**: Using SQL to clean the Food Choices data and make it ready for analysis.
 <br />
 <div align="center">
   <a href="https://www.geotab.com/CMS-Media-production/Blog/NA/_2020/November/data-cleaning/blog_data_cleaning_hero_@2x.jpg">
@@ -76,41 +76,16 @@
 ## Data Cleaning and Processing
 * Renaming Columns
   <p align="justify">
-    The first thing i noticed was how poorly named the columns were, making understanding the replies in the dataset very very difficult. To fix this, I used the docx file provided that contained all the survery questions.
+    The first thing i noticed was how poorly named the columns were, making understanding the replies in the dataset very very difficult. To fix this, I used the docx file provided that contained all the survery questions. 
+  </p>
 ```sql
   ------------------  CLEANING THE DATA  ------------------
   -- Renaming Columns
-  EXEC sp_rename 'dbo.food_choices.calories_chicken' , 'guess_chicken_calories' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.calories_day' , 'calorie_per_day' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.calories_scone' , 'guess_scone_calories' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.coffee' , 'coffee_picture' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.comfort_food_reasons_coded' , 'comfort_food_reasons_short' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.cook' , 'cooking_frequency' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.diet_current' , 'current_diet' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.diet_current_coded' , 'current_diet_short' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.drink' , 'drink_picture' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.eating_changes_coded' , 'eating_changes_short' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.employment' , 'employment_status' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.father_education' , 'father_education_level' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.fav_cuisine_coded' , 'fav_cuisine_grouped' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.food_childhood' , 'fav_childhood_food' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.fries' , 'fries_picture' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.fruit_day' , 'fruit_per_day' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.healthy_feeling' , 'do_you_feel_healthy' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.ideal_diet_coded' , 'ideal_diet_short' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.life_rewarding' , 'is_life_rewarding' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.meals_dinner_friend' , 'dinner_for_friend' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.mother_education' , 'mother_education_level' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.on_off_campus' , 'residence' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.pay_meal_out' , 'pay_for_meal_out' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.soup' , 'soup_picture' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.tortilla_calories' , 'guess_tortilla_calories' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.turkey_calories' , 'guess_turkey_calories' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.type_sports' , 'sport_type' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.veggies_day' , 'veggies_per_day' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.waffle_calories' , 'guess_waffle_calories' , 'COLUMN';
-  EXEC sp_rename 'dbo.food_choices.weight' , 'weight_pounds' , 'COLUMN';
+  EXEC sp_rename 'dbo.food_choices.calories_chicken', 'guess_chicken_calories', 'COLUMN';
+  EXEC sp_rename 'dbo.food_choices.calories_day', 'calorie_per_day', 'COLUMN';
+  EXEC sp_rename 'dbo.food_choices.calories_scone', 'guess_scone_calories', 'COLUMN';
 ```
+  <p>...the rest of the query can be found <a href="https://github.com/josepharchibong/Data-Cleaning-with-SQL/blob/main/SQL%20Files/food%20choices.sql">here</a></p>
 
-* Removing empty cells and Missing Data
+<!-- * Removing empty cells and Missing Data -->
 
