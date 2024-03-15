@@ -78,14 +78,45 @@
   <p align="justify">
     The first thing i noticed was how poorly named the columns were, making understanding the replies in the dataset very very difficult. To fix this, I used the docx file provided that contained all the survery questions. 
   </p>
-```sql
-  ------------------  CLEANING THE DATA  ------------------
-  -- Renaming Columns
+  
+  ```SQL
+  -- RENAMING COLUMNS
   EXEC sp_rename 'dbo.food_choices.calories_chicken', 'guess_chicken_calories', 'COLUMN';
   EXEC sp_rename 'dbo.food_choices.calories_day', 'calorie_per_day', 'COLUMN';
   EXEC sp_rename 'dbo.food_choices.calories_scone', 'guess_scone_calories', 'COLUMN';
-```
+  ```
   <p>...the rest of the query can be found <a href="https://github.com/josepharchibong/Data-Cleaning-with-SQL/blob/main/SQL%20Files/food%20choices.sql">here</a></p>
 
-<!-- * Removing empty cells and Missing Data -->
+---------------------------------------------------------------------
+* Removing empty cells and Missing Data. 
+  <p align="justify">
+    To find duplicate rows, I partition the dataset by some of the columns with open-ended answers.
+  </p>
 
+  ```SQL
+  -- CHECKING FOR DUPLICATES
+  WITH RowNumCTE as
+  (
+	SELECT	ROW_NUMBER() OVER (
+			PARTITION BY comfort_food, current_diet, father_profession
+			ORDER BY comfort_food
+			) as row_num, *
+	FROM dbo.food_choices
+  )
+  SELECT *
+  FROM RowNumCTE
+  WHERE row_num > 1
+  ```
+  <p align="justify">From the output below, one can see there were no duplicates found, which further validates the intergrity of the data.
+  
+  ![Screenshot of the outcome](images/checking_for_duplicates.png)
+---------------------------------------------------------------------
+* Data Transformation: Handling Missing Data/Nulls
+  <p align="justify">
+    
+  </p>
+  
+  ```SQL
+  --
+  
+  ```
