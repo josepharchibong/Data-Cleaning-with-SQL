@@ -3,6 +3,7 @@ SELECT * FROM dbo.food_choices
 
 ------------------  CLEANING THE DATA  ------------------
 -- Renaming Columns
+BEGIN TRANSACTION;
 EXEC sp_rename 'dbo.food_choices.calories_chicken' , 'guess_chicken_calories' , 'COLUMN';
 EXEC sp_rename 'dbo.food_choices.calories_day' , 'calorie_per_day' , 'COLUMN';
 EXEC sp_rename 'dbo.food_choices.calories_scone' , 'guess_scone_calories' , 'COLUMN';
@@ -33,4 +34,4 @@ EXEC sp_rename 'dbo.food_choices.type_sports' , 'sport_type' , 'COLUMN';
 EXEC sp_rename 'dbo.food_choices.veggies_day' , 'veggies_per_day' , 'COLUMN';
 EXEC sp_rename 'dbo.food_choices.waffle_calories' , 'guess_waffle_calories' , 'COLUMN';
 EXEC sp_rename 'dbo.food_choices.weight' , 'weight_pounds' , 'COLUMN';
-;
+COMMIT;

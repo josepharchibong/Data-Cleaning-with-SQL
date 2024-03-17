@@ -64,13 +64,13 @@
    Moving over to SSMS where the Food Choice data will be imported, a new database had to be created. To do that I <br /> <i>>> right-click on 'Databases' (under the 'Object Explorer' tab) <br /> >> Select 'New Database' <br /> >> Input the Database name (Food Choice) and click 'Okay'.</i>
 
   Now that the database is up and running, its time to import the data. To do that I <br /><i> >> right-click on the database (Food Choice) <br /> >> hover over 'Tasks' <br /> >> select 'Import Data' </i><br /> ...and voila we have our dataset in SSMS.
+  </p>
 
   <div align="center">
     <a href="https://www.youtube.com/watch?v=S7SpFIg5iVM">
       <img src="images/data_successfully_imported.png" >
     </a>
   </div>
-  </p>
 
 
 ## Data Cleaning and Processing
@@ -78,9 +78,16 @@
   <p align="justify">
     The first thing i noticed was how poorly named the columns were, making understanding the replies in the dataset very very difficult. To fix this, I used the docx file provided that contained all the survery questions. 
   </p>
+<<<<<<< HEAD
+  
+  ```SQL
+  ------------------  CLEANING THE DATA  ------------------
+  -- Renaming Columns
+=======
   
   ```SQL
   -- RENAMING COLUMNS
+>>>>>>> 5e91acaea31c22afc4ff69d2b9cde0e4ab7f1352
   EXEC sp_rename 'dbo.food_choices.calories_chicken', 'guess_chicken_calories', 'COLUMN';
   EXEC sp_rename 'dbo.food_choices.calories_day', 'calorie_per_day', 'COLUMN';
   EXEC sp_rename 'dbo.food_choices.calories_scone', 'guess_scone_calories', 'COLUMN';
@@ -93,6 +100,24 @@
     To find duplicate rows, I partition the dataset by some of the columns with open-ended answers.
   </p>
 
+  ```SQL
+  -- Checking for duplicate rows
+  WITH RowNumCTE as
+  (
+	SELECT	ROW_NUMBER() OVER (
+			PARTITION BY comfort_food, current_diet, father_profession
+			ORDER BY comfort_food
+			) as row_num, *
+	FROM dbo.food_choices
+  )
+  SELECT *
+  FROM RowNumCTE
+  WHERE row_num > 1
+  ```
+  <p align="justify">From the output below, one can see there were no duplicates found, which further validates the intergrity of the data.
+  
+  ![Screenshot of the outcome](images/checking_for_duplicates.png)
+---------------------------------------------------------------------
   ```SQL
   -- CHECKING FOR DUPLICATES
   WITH RowNumCTE as
@@ -120,3 +145,4 @@
   --
   
   ```
+
