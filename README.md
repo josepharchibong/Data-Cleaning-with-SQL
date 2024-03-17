@@ -78,21 +78,20 @@
   <p align="justify">
     The first thing i noticed was how poorly named the columns were, making understanding the replies in the dataset very very difficult. To fix this, I used the docx file provided that contained all the survery questions. 
   </p>
-<<<<<<< HEAD
-  
-  ```SQL
-  ------------------  CLEANING THE DATA  ------------------
-  -- Renaming Columns
-=======
   
   ```SQL
   -- RENAMING COLUMNS
->>>>>>> 5e91acaea31c22afc4ff69d2b9cde0e4ab7f1352
+  BEGIN TRANSACTION;
   EXEC sp_rename 'dbo.food_choices.calories_chicken', 'guess_chicken_calories', 'COLUMN';
   EXEC sp_rename 'dbo.food_choices.calories_day', 'calorie_per_day', 'COLUMN';
   EXEC sp_rename 'dbo.food_choices.calories_scone', 'guess_scone_calories', 'COLUMN';
+  .
+  .
+  .
+  EXEC sp_rename 'dbo.food_choices.weight' , 'weight_pounds' , 'COLUMN';
+  COMMIT;
   ```
-  <p>...the rest of the query can be found <a href="https://github.com/josepharchibong/Data-Cleaning-with-SQL/blob/main/SQL%20Files/food%20choices.sql">here</a></p>
+  <p>...the complete code for the query can be found [here](SQL_Files/food_choices.sql) <a href="https://github.com/josepharchibong/Data-Cleaning-with-SQL/blob/main/SQL%20Files/food%20choices.sql">here</a></p>
 
 ---------------------------------------------------------------------
 * Removing empty cells and Missing Data. 
@@ -141,8 +140,4 @@
     
   </p>
   
-  ```SQL
-  --
-  
-  ```
 
