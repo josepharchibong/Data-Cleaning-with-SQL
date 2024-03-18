@@ -92,7 +92,6 @@
   ```
   ...the complete code for the query can be found [here.](SQL_Files/renaming_columns.sql) 
   </p>
-<br />
 
 ---------------------------------------------------------------------
 * <b>Checking for Duplicate</b>
@@ -120,7 +119,7 @@
 ---------------------------------------------------------------------
 * <b>Handling Inconsisitent Data & Nulls</b>
       <p>
-      Some data quality issues I observed as regards inconsistent data and nulls include:</p>
+      Some data quality issues I observed as regards inconsistency and nulls include:</p>
       <p>
       1. The following columns have 'none', 'nan' & 'Nun' values.<br>
       <i>`comfort_food`, `comfort_food_reasons`, `current_diet`, `eating_changes`, `father_profession`, `fav_cuisine`, `fav_childhood_food`, `healthy_meal`, `ideal_diet`, `dinner_for_friend`, `mother_profession`.
@@ -152,13 +151,9 @@
     > Helpful advice for doing things better or more easily.
   </p>
 
-
-
-
-
 ---------------------------------------------------------------------
 
-* Data Formatting: Fixing the data type of some columns
+* <b>Data Formatting: Fixing the data type of some columns</b>
   <p align="justify">
       Most of the questions in the survey were objectives, which had 4 - 6 options varying per question. This made the entire dataset to be flooded with numbers. I'll be using the  document with the survey questions & answers to fix this. <br /><br /> But before that, the data type for these columns have to correspond with whatever will be replacing those numbers. To do that i'll be using the `ALTER TABLE` `ALTER COLUMN` statements.
     
