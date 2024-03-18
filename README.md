@@ -138,7 +138,7 @@
     
     COMMIT;
     ```
-  
+  SQL_Files/renaming_columns.sql
     ...the complete code for the query can be found <a href="https://github.com/josepharchibong/Data-Cleaning-with-SQL/blob/main/SQL%20Files/food%20choices.sql">here</a></p>
   </p>
   
