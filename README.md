@@ -77,7 +77,7 @@
 * Renaming Columns
   <p align="justify">
     The first thing i noticed was how poorly named the columns were, making understanding the replies in the dataset very very difficult. To fix this, I used the docx file provided that contained all the survery questions. 
-  </p>
+  
   
   ```SQL
   -- RENAMING COLUMNS
@@ -91,7 +91,8 @@
   EXEC sp_rename 'dbo.food_choices.weight' , 'weight_pounds' , 'COLUMN';
   COMMIT;
   ```
-  <p>...the complete code for the query can be found <a href="https://github.com/josepharchibong/Data-Cleaning-with-SQL/blob/main/SQL%20Files/food%20choices.sql">here</a></p>
+  ...the complete code for the query can be found [here.](SQL_Files/renaming_columns.sql) 
+  </p>
 
 ---------------------------------------------------------------------
 * Checking for Duplicate
@@ -138,13 +139,17 @@
     
     COMMIT;
     ```
-  SQL_Files/renaming_columns.sql
-    ...the complete code for the query can be found <a href="https://github.com/josepharchibong/Data-Cleaning-with-SQL/blob/main/SQL%20Files/food%20choices.sql">here</a></p>
-  </p>
   
+    ...the complete code for the query can be found [here.](SQL_Files/fixinig_data_type.sql)
+
+    > [!TIP]
+    > Helpful advice for doing things better or more easily.
+  </p>
+---------------------------------------------------------------------
+
+* Data Tranformation for some columns with inconsistent data
+
+
 
 
   <!-- Removing empty cells and Missing Data. -->
-
-> [!TIP]
-> Helpful advice for doing things better or more easily.
