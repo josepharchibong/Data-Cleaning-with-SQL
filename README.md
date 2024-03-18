@@ -91,10 +91,10 @@
   EXEC sp_rename 'dbo.food_choices.weight' , 'weight_pounds' , 'COLUMN';
   COMMIT;
   ```
-  <p>...the complete code for the query can be found [here](SQL_Files/food_choices.sql) <a href="https://github.com/josepharchibong/Data-Cleaning-with-SQL/blob/main/SQL%20Files/food%20choices.sql">here</a></p>
+  <p>...the complete code for the query can be found <a href="https://github.com/josepharchibong/Data-Cleaning-with-SQL/blob/main/SQL%20Files/food%20choices.sql">here</a></p>
 
 ---------------------------------------------------------------------
-* Removing empty cells and Missing Data. 
+* Checking for Duplicate
   <p align="justify">
     To find duplicate rows, I partition the dataset by some of the columns with open-ended answers.
   </p>
@@ -117,27 +117,34 @@
   
   ![Screenshot of the outcome](images/checking_for_duplicates.png)
 ---------------------------------------------------------------------
-  ```SQL
-  -- CHECKING FOR DUPLICATES
-  WITH RowNumCTE as
-  (
-	SELECT	ROW_NUMBER() OVER (
-			PARTITION BY comfort_food, current_diet, father_profession
-			ORDER BY comfort_food
-			) as row_num, *
-	FROM dbo.food_choices
-  )
-  SELECT *
-  FROM RowNumCTE
-  WHERE row_num > 1
-  ```
-  <p align="justify">From the output below, one can see there were no duplicates found, which further validates the intergrity of the data.
-  
-  ![Screenshot of the outcome](images/checking_for_duplicates.png)
----------------------------------------------------------------------
-* Data Transformation: Handling Missing Data/Nulls
+
+* Data Formatting: Fixing the data type of some columns
   <p align="justify">
+      Most of the questions in the survey were objectives, which had 4 - 6 options varying per question. This made the entire dataset to be flooded with numbers. I'll be using the  document with the survey questions & answers to fix this. <br /><br /> But before that, the data type for these columns have to correspond with whatever will be replacing those numbers. To do that i'll be using the `ALTER TABLE` `ALTER COLUMN` statements.
     
+    ```SQL
+    -- Changing the Data Type for some colums
+    BEGIN TRANSACTION;
+
+    ALTER TABLE dbo.food_choices
+      ALTER COLUMN Gender nvarchar(10);
+    ALTER TABLE dbo.food_choices
+      ALTER COLUMN breakfast nvarchar(50);
+    .
+    .
+    .
+    ALTER TABLE dbo.food_choices
+      ALTER COLUMN vitamins nvarchar(50);
+    
+    COMMIT;
+    ```
+  
+    ...the complete code for the query can be found <a href="https://github.com/josepharchibong/Data-Cleaning-with-SQL/blob/main/SQL%20Files/food%20choices.sql">here</a></p>
   </p>
   
 
+
+  <!-- Removing empty cells and Missing Data. -->
+
+> [!TIP]
+> Helpful advice for doing things better or more easily.
