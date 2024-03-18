@@ -118,30 +118,32 @@
   
   ![Screenshot of the outcome](images/checking_for_duplicates.png)
 ---------------------------------------------------------------------
-* <b>Handling Missing Data & Nulls</b>
-  <p align="justify">
-      Some data quality issues I observed as regards missing data and nulls include:</p>
+* <b>Handling Inconsisitent Data & Nulls</b>
+      <p>
+      Some data quality issues I observed as regards inconsistent data and nulls include:</p>
       <p>
       1. The following columns have 'none', 'nan' & 'Nun' values.<br>
-    <i>`comfort_food` <br />
-      2. Row 107-125 of the `comfort_food_reasons_short` column  are null values.<br />
-      3. <br /> But before that, the data type for these columns have to correspond with whatever will be replacing those numbers. To do that i'll be using the `ALTER TABLE` `ALTER COLUMN` statements. </p>
+      <i>`comfort_food`, `comfort_food_reasons`, `current_diet`, `eating_changes`, `father_profession`, `fav_cuisine`, `fav_childhood_food`, `healthy_meal`, `ideal_diet`, `dinner_for_friend`, `mother_profession`.
+      </i>
+      <br /><br />
+      2. The columns <i>`comfort_food_reasons_short` & `sports`</i> have NULL values that could be corrected by cross-referencing data from other columns.
+      </p>
     
-    ```SQL
-    -- Changing the Data Type for some columns
-    BEGIN TRANSACTION;
+    ```sql
+      -- Changing the Data Type for some columns
+      BEGIN TRANSACTION;
 
-    ALTER TABLE dbo.food_choices
-      ALTER COLUMN Gender nvarchar(10);
-    ALTER TABLE dbo.food_choices
-      ALTER COLUMN breakfast nvarchar(50);
-    .
-    .
-    .
-    ALTER TABLE dbo.food_choices
-      ALTER COLUMN vitamins nvarchar(50);
+      ALTER TABLE dbo.food_choices
+        ALTER COLUMN Gender nvarchar(10);
+      ALTER TABLE dbo.food_choices
+        ALTER COLUMN breakfast nvarchar(50);
+      .
+      .
+      .
+      ALTER TABLE dbo.food_choices
+        ALTER COLUMN vitamins nvarchar(50);
     
-    COMMIT;
+      COMMIT;
     ```
   
     ...the complete code for the query can be found [here.](SQL_Files/fixinig_data_type.sql)
