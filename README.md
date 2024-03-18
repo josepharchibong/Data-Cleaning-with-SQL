@@ -74,10 +74,9 @@
 
 
 ## Data Cleaning and Processing
-* Renaming Columns
+* <b>Renaming Columns</b>
   <p align="justify">
-    The first thing i noticed was how poorly named the columns were, making understanding the replies in the dataset very very difficult. To fix this, I used the docx file provided that contained all the survery questions. 
-  
+    The first thing I noticed was how poorly named the columns were, making understanding the answers in the dataset challenging. To fix this, I used the docx file provided that contained all the survery questions and possoptions to choose from. 
   
   ```SQL
   -- RENAMING COLUMNS
@@ -93,11 +92,12 @@
   ```
   ...the complete code for the query can be found [here.](SQL_Files/renaming_columns.sql) 
   </p>
+<br />
 
 ---------------------------------------------------------------------
-* Checking for Duplicate
+* <b>Checking for Duplicate</b>
   <p align="justify">
-    To find duplicate rows, I partition the dataset by some of the columns with open-ended answers.
+    To find duplicate rows, I partitioned the dataset by some of the columns with open-ended answers.
   </p>
 
   ```SQL
@@ -114,9 +114,46 @@
   FROM RowNumCTE
   WHERE row_num > 1
   ```
-  <p align="justify">From the output below, one can see there were no duplicates found, which further validates the intergrity of the data.
+  <p align="justify">From the output below, there were no duplicates found, which further validates the intergrity of the data.
   
   ![Screenshot of the outcome](images/checking_for_duplicates.png)
+---------------------------------------------------------------------
+* <b>Handling Missing Data & Nulls</b>
+  <p align="justify">
+      Some data quality issues I observed as regards missing data and nulls include:</p>
+      <p>
+      1. The following columns have 'none', 'nan' & 'Nun' values.<br>
+    <i>`comfort_food` <br />
+      2. Row 107-125 of the `comfort_food_reasons_short` column  are null values.<br />
+      3. <br /> But before that, the data type for these columns have to correspond with whatever will be replacing those numbers. To do that i'll be using the `ALTER TABLE` `ALTER COLUMN` statements. </p>
+    
+    ```SQL
+    -- Changing the Data Type for some columns
+    BEGIN TRANSACTION;
+
+    ALTER TABLE dbo.food_choices
+      ALTER COLUMN Gender nvarchar(10);
+    ALTER TABLE dbo.food_choices
+      ALTER COLUMN breakfast nvarchar(50);
+    .
+    .
+    .
+    ALTER TABLE dbo.food_choices
+      ALTER COLUMN vitamins nvarchar(50);
+    
+    COMMIT;
+    ```
+  
+    ...the complete code for the query can be found [here.](SQL_Files/fixinig_data_type.sql)
+
+    > [!TIP]
+    > Helpful advice for doing things better or more easily.
+  </p>
+
+
+
+
+
 ---------------------------------------------------------------------
 
 * Data Formatting: Fixing the data type of some columns
@@ -147,9 +184,9 @@
   </p>
 ---------------------------------------------------------------------
 
-* Data Tranformation for some columns with inconsistent data
 
 
 
+<!-- * Data Tranformation for some columns with inconsistent data
 
-  <!-- Removing empty cells and Missing Data. -->
+  Removing empty cells and Missing Data. -->
