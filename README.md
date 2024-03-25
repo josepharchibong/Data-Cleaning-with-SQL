@@ -36,18 +36,16 @@
     This project aims to showcase the power of SQL in cleaning and preparing real-world datasets for analysis. I'll be utilizing a dataset sourced from Kaggle, which contains survey responses from 126 college students regarding their food choices and preferences. Using SQL, we'll tackle common data cleaning tasks such as removing duplicates, handling missing values, and standardizing data formats.
 </p>
 
-## Data Collection
-* <b>Surver Design:</b> <p align="justify">
-  Before data collection began, a comprehensive survey was designed to capture a wide range of information related to food choices. The survey questions covers various aspects such as dietary preferences, favorite foods, frequency of dining out, and factors influencing food choices. </p>
+## Data Collection 
+* <p align="justify"><b>Surver Design:</b><br />
+  Before data collection began, a comprehensive survey was designed to capture a wide range of information related to food choices. The survey questions covers various aspects such as dietary preferences, favorite foods, frequency of dining out, and factors influencing food choices. </p><br />
 
+* <p align="justify"><b>Data Collection Method:</b><br />
+  The survey was administered electronically using an online survey platform. Participants were provided with a link to the survey, which they could access and complete at their convenience. This method allowed for efficient data collection while ensuring anonymity and confidentiality for participants. Throughout the data collection process, ethical considerations were prioritized. Participants were provided with clear information about the purpose of the survey, their rights as participants, and how their data would be used. Informed consent was obtained from all participants before they began the survey. </p><br />
 
-* <b>Data Collection Method:</b> <p align="justify">
-  The survey was administered electronically using an online survey platform. Participants were provided with a link to the survey, which they could access and complete at their convenience. This method allowed for efficient data collection while ensuring anonymity and confidentiality for participants. Throughout the data collection process, ethical considerations were prioritized. Participants were provided with clear information about the purpose of the survey, their rights as participants, and how their data would be used. Informed consent was obtained from all participants before they began the survey. </p>
-
-
-* <b>Data Validation:</b> <p align="justify">
+* <p align="justify"><b>Data Validation:</b><br />
   To maintain data integrity, measures such as incorporating validation checks within the survey platform and encouraging  participants to review their responses before submission to minimize errors, were implemented to validate the responses collected.</p>
-<br />
+
 
 <p align="justify">
   The dataset used in this project is a qualitative dataset and was obtained from a secondary source - <a href="https://www.kaggle.com/datasets/borapajo/food-choices?select=food_coded.csv">kaggle</a>, thanks to <a href="https://www.kaggle.com/borapajo">BoraPajo</a> for making this dataset avalaible to the public :smile:.
@@ -125,9 +123,13 @@
       <i>`comfort_food`, `comfort_food_reasons`, `current_diet`, `eating_changes`, `father_profession`, `fav_cuisine`, `fav_childhood_food`, `healthy_meal`, `ideal_diet`, `dinner_for_friend`, `mother_profession`.
       </i>
       <br /><br />
+      ![Screenshot of before & after](images/cleaning_1_main.png)
+      <br />
       2. The columns <i>`comfort_food_reasons_short` & `sports`</i> have NULL values that could be corrected by cross-referencing data from other columns.
       </p>
     
+    <i><b>SOLUTIONS</b></i>
+
     ```sql
       -- Changing the Data Type for some columns
       BEGIN TRANSACTION;
