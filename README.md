@@ -182,11 +182,9 @@
     ...the complete code for the query can be found [here.](SQL_Files/fixing_data_type.sql)
 
     > [!TIP]
-    > Helpful advice for doing things better or more easily.
+    > When using multiple DDLs and DMLs like `DROP`, `ALTER`, & `INSERT INTO` I use `TRANSACTIONS` to ensure data intergrity. Meaning if errors are encountered, all data modifications made after the BEGIN TRANSACTION can be rolled back to return the data to this known state of consistency. Each transaction lasts until either it completes without errors and COMMIT TRANSACTION is issued to make the modifications a permanent part of the database, or errors are encountered and all modifications are erased with a ROLLBACK TRANSACTION statement.
   
 ---------------------------------------------------------------------
-
-
 
 
 <!-- * Data Tranformation for some columns with inconsistent data
