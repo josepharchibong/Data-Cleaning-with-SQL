@@ -111,7 +111,7 @@
   FROM RowNumCTE
   WHERE row_num > 1
   ```
-  <p align="justify">From the output below, there were no duplicates found, which further validates the intergrity of the data.
+  <p align="justify">From the output below, there were no duplicates found, which further validates the intergrity of the data.</p>
   
   ![Screenshot of the outcome](images/checking_for_duplicates.png)
 ---------------------------------------------------------------------
@@ -121,11 +121,11 @@
       <p>
       1. The following columns have 'none', 'nan' & 'Nun' values.<br />
       <i>`comfort_food`, `comfort_food_reasons`, `current_diet`, `eating_changes`, `father_profession`, `fav_cuisine`, `fav_childhood_food`, `healthy_meal`, `ideal_diet`, `dinner_for_friend`, `mother_profession`.</i></p>
-      these are the rows before...
+      <p>these are the rows before...</p>
       ![Screenshot of before](images/null,nan,nun_before.png)
       <br />
       <br />
-      and these are the rows after.
+      <p>and these are the rows after.</p>
       ![Screenshot of after](images/null,nan,nun_after.png)
       <br />
       <br />
