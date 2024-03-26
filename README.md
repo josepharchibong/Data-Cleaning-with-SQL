@@ -157,9 +157,12 @@
 ---------------------------------------------------------------------
 
 * <b>Data Formatting: Fixing the data type of some columns</b>
-  <p align="justify">
-      Most of the questions in the survey were objectives, which had 4 - 6 options varying per question. This made the entire dataset to be flooded with numbers. I'll be using the  document with the survey questions & answers to fix this. <br /><br /> But before that, the data type for these columns have to correspond with whatever will be replacing those numbers. To do that i'll be using the `ALTER TABLE` `ALTER COLUMN` statements.
-    
+    <p align="justify">
+    Most of the questions in the survey were objectives, which had 4 - 6 options varying per question. This made the entire dataset to be flooded with numbers. I'll be using the  document with the survey questions & answers to fix this. 
+    <br />
+    But before that, the data type for these columns have to correspond with whatever will be replacing those numbers. To do that i'll be using the <i>`ALTER TABLE` - `ALTER COLUMN`</i> statements.
+  </p>
+
     ```SQL
     -- Changing the Data Type for some colums
     BEGIN TRANSACTION;
@@ -176,12 +179,11 @@
     
     COMMIT;
     ```
-  
-    ...the complete code for the query can be found [here.](SQL_Files/fixinig_data_type.sql)
+    ...the complete code for the query can be found [here.](SQL_Files/fixing_data_type.sql)
 
     > [!TIP]
     > Helpful advice for doing things better or more easily.
-  </p>
+  
 ---------------------------------------------------------------------
 
 
