@@ -121,19 +121,26 @@
       <p>
       1. The following columns have 'none', 'nan' & 'Nun' values.<br />
       <i>`comfort_food`, `comfort_food_reasons`, `current_diet`, `eating_changes`, `father_profession`, `fav_cuisine`, `fav_childhood_food`, `healthy_meal`, `ideal_diet`, `dinner_for_friend`, `mother_profession`.</i></p>
-      <p>these are the rows before...</p>
+      <p>these are the rows <i><b>before...</i></b></p>
       ![Screenshot of before](images/null,nan,nun_before.png)
       <br />
       <br />
-      <p>and these are the rows after.</p>
+      <p>and these are the rows <i><b>after...</i></b></p>
       ![Screenshot of after](images/null,nan,nun_after.png)
       <br />
       <br />
       <p>
       2. The columns <i>`comfort_food_reasons_short` & `sports`</i> have NULL values that could be corrected by cross-referencing data from other columns.
       </p>
-    
-    <i><b>SOLUTIONS</b></i>
+      <p>these are the rows <i><b>before...</i></b></p>
+      ![Screenshot of before](images/cross_reference_before.png)
+      <br />
+      <br />
+      <p>and these are the rows <i><b>after...</i></b></p>
+      ![Screenshot of after](images/cross_reference_after.png)
+      <br />
+      <br />
+      <p>    
 
     ```sql
     -- Replacing NULL values by cross-referencing

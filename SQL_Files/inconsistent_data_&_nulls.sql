@@ -1,5 +1,5 @@
--- Cleaning columns with 'none', 'nan' & 'Nun', etc
--- EDA to identify the rows with the inconsistent data
+-- 1. Cleaning columns with 'none', 'nan' & 'Nun', etc
+-- 'SELECT' statements to identify the rows with the inconsistent data
 SELECT comfort_food --replace with null
 FROM dbo.food_choices
 WHERE comfort_food IN ('none', 'nan')
@@ -48,9 +48,15 @@ SELECT mother_profession --replace with Unemployed
 FROM dbo.food_choices
 WHERE mother_profession IN ('none', 'nan', 'nothing')
 ;
+SELECT sport_type --replace with null
+FROM dbo.food_choices
+WHERE	sport_type LIKE '%non%' OR
+		sport_type LIKE '%nan%' OR
+		sport_type LIKE '%no %'
+;
 
 --------------------------------------------------------
---Update query to fix all the issues
+--'UPDATE' query to fix all the issues
 BEGIN TRANSACTION;
 
 UPDATE dbo.food_choices  --replace with null
@@ -101,5 +107,36 @@ UPDATE dbo.food_choices  --replace with Unemployed
 SET mother_profession = 'Unemployed'
 WHERE mother_profession IN ('none', 'nan', 'nothing')
 ;
-
+UPDATE dbo.food_choices --replace with null
+SET sport_type = NULL
+WHERE	sport_type LIKE '%non%' OR
+		sport_type LIKE '%nan%' OR
+		sport_type LIKE '%no %'
+;
 COMMIT;
+
+
+----------------------------------------------------------
+----------------------------------------------------------
+-- 2. Replacing NULL values by cross-referencing
+-- 'SELECT' statements to identify the rows with the inconsistent data
+SELECT sports, sport_type
+FROM dbo.food_choices
+WHERE sports IS NULL
+;
+SELECT comfort_food_reasons_short, comfort_food_reasons_coded1
+FROM dbo.food_choices
+WHERE comfort_food_reasons_short IS NULL
+;
+
+--------------------------------------------------------
+--'UPDATE' query to fix all the issues
+UPDATE dbo.food_choices
+SET sports = CASE 
+				WHEN sports IS NULL THEN 1 
+                ELSE sports
+			 END
+;
+
+UPDATE dbo.food_choices
+SET comfort_food_reasons_short = COALESCE(comfort_food_reasons_short, comfort_food_reasons_coded1)
