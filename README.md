@@ -136,20 +136,17 @@
     <i><b>SOLUTIONS</b></i>
 
     ```sql
-      -- Changing the Data Type for some columns
-      BEGIN TRANSACTION;
+    -- Replacing NULL values by cross-referencing
+      UPDATE dbo.food_choices
+      SET sports = 
+          CASE 
+			      WHEN sports IS NULL THEN 1 
+			    END
+      ;
 
-      ALTER TABLE dbo.food_choices
-        ALTER COLUMN Gender nvarchar(10);
-      ALTER TABLE dbo.food_choices
-        ALTER COLUMN breakfast nvarchar(50);
-      .
-      .
-      .
-      ALTER TABLE dbo.food_choices
-        ALTER COLUMN vitamins nvarchar(50);
-    
-      COMMIT;
+      UPDATE dbo.food_choices
+      SET comfort_food_reasons_short = COALESCE(comfort_food_reasons_short, comfort_food_reasons_coded1)
+      ;
     ```
   
     ...the complete code for the query can be found [here.](SQL_Files/fixinig_data_type.sql)
