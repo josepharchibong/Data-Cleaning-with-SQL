@@ -138,9 +138,8 @@
     ```sql
     -- Replacing NULL values by cross-referencing
       UPDATE dbo.food_choices
-      SET sports = 
-          CASE 
-			      WHEN sports IS NULL THEN 1 
+      SET sports = CASE 
+			    WHEN sports IS NULL THEN 1 
 			    END
       ;
 
