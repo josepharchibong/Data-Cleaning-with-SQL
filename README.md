@@ -139,24 +139,10 @@
       <p>and these are the rows <i><b>after...</i></b></p>
       ![Screenshot of after](images/cross_reference_after.png)
       <br />
-      <br />
       <p>    
-
-    ```sql
-    -- Replacing NULL values by cross-referencing
-      UPDATE dbo.food_choices
-      SET sports = CASE 
-			  WHEN sports IS NULL THEN 1 
-			  END
-      ;
-
-      UPDATE dbo.food_choices
-      SET comfort_food_reasons_short = COALESCE(comfort_food_reasons_short, comfort_food_reasons_coded1)
-      ;
-    ```
   
-    ...the complete code for the query can be found [here.](SQL_Files/fixinig_data_type.sql)
-
+    ...the complete code for this section can be found [here.](SQL_Files/inconsistent_data_&_nulls.sql)
+       <br /> <br />
 ---------------------------------------------------------------------
 
 * <b>Data Formatting: Fixing the data type of some columns</b>
