@@ -142,7 +142,7 @@
       <p>    
   
     ...the complete code for this section can be found [here.](SQL_Files/inconsistent_data_&_nulls.sql)
-       <br /> <br />
+       <br />
 ---------------------------------------------------------------------
 
 * <b>Data Formatting: Fixing the data type of some columns</b>
@@ -174,8 +174,41 @@
     > When using multiple DDLs and DMLs like `DROP`, `ALTER`, & `INSERT INTO` I use `TRANSACTIONS` to ensure data intergrity. Meaning if errors are encountered, all data modifications made after the BEGIN TRANSACTION can be rolled back to return the data to this known state of consistency. Each transaction lasts until either it completes without errors and COMMIT TRANSACTION is issued to make the modifications a permanent part of the database, or errors are encountered and all modifications are erased with a ROLLBACK TRANSACTION statement.
   
 ---------------------------------------------------------------------
+* <b>Data Tranformation.</b>
+      <p>
+      Most of the questions in the survey are close-ended, which means the students or anyone taking the survey would be limited to a range of possible responses - which are, in this case, numbered from 1 to 6.
+      This makes the dataset filled with numbers all over...
+      </p> 
+      ![Screenshot of before](images/data_transformation_before.png)
+      <p>
+      ...which would make little no sense to anyone trying to analyze it. So here i'll be replacing the numbers with their corresponding option from the Word document provided in the dowload folder. </p><br/>
+      <p>
+      And this is what the above screenshot looks like after the trasfrormation
+      </p>
+      ![Screenshot of before](images/data_transformation_after.png)
+      <p>
+      Listed below are the colomns that were fixed.<br />
+      <i>`Gender`, `breakfast`, `calorie_per_day`, `coffee_picture`, `cooking_frequency`, `cuisine`, `current_diet_short`, `drink_picture`, `eating_changes_short`, `eating_out`, `employment_status`, `ethnic_food`, `exercise`, `father_education_level`, `fav_cuisine_grouped`, `fav_food`, `fries_picture`, `fruit_per_day`, `grade_level`, `greek_food`, `do_you_feel_healthy`, `ideal_diet_short`, `income`, `indian_food`, `italian_food`, `is_life_rewarding`, `marital_status`, `mother_education_level`, `nutritional_check`, `residence`, `parents_cook` `pay_for_meal_out`, `persian_food`, `self_perception_weight`, `soup_picture`, `sports`, `thai_food`, `veggies_per_day`, `vitamins`.</i></p>
+      <p>these are the rows <i><b>before...</i></b></p>
+      ![Screenshot of before](images/null,nan,nun_before.png)
+      <br />
+      <br />
+      <p>and these are the rows <i><b>after...</i></b></p>
+      ![Screenshot of after](images/null,nan,nun_after.png)
+      <br />
+      <br />
+      <p>
+      2. The columns <i>`comfort_food_reasons_short` & `sports`</i> have NULL values that could be corrected by cross-referencing data from other columns.
+      </p>
+      <p>these are the rows <i><b>before...</i></b></p>
+      ![Screenshot of before](images/cross_reference_before.png)
+      <br />
+      <br />
+      <p>and these are the rows <i><b>after...</i></b></p>
+      ![Screenshot of after](images/cross_reference_after.png)
+      <br />
+      <p>    
+  
+    ...the complete code for this section can be found [here.](SQL_Files/inconsistent_data_&_nulls.sql)
 
-
-<!-- * Data Tranformation for some columns with inconsistent data
-
-  Removing empty cells and Missing Data. -->
+*  for columns with numbers instead
