@@ -182,10 +182,8 @@
       ![Screenshot of before](images/data_transformation_before.png)
       <p align="justify">
       ...which would make little no sense to anyone trying to analyze it. So here i'll be replacing the numbers with their corresponding option from the Word document provided in the dowload folder. </p>
-1. <b>Data Formatting: Fixing the data type of the columns affeted.</b>
-        <p align="justify">
+1. <b>Data Formatting: Fixing the data type of the columns affeted.</b><br/>
     But before that, the data type for these columns have to correspond with whatever will be replacing those numbers. To do that i'll be using the <i>`ALTER TABLE` - `ALTER COLUMN`</i> statements. 
-      </p>
 
     ```SQL
     -- Changing the Data Type for some colums
@@ -204,16 +202,13 @@
     COMMIT;
     ```
     ...the complete code for the query can be found [here.](SQL_Files/fixing_data_type.sql)
+<br/><br/>
 
-2. <b>Now to the Data Tranformation.</b>
-  <p align="justify">
-    The columns to be fixed include:  <i>`Gender`, `breakfast`, `calorie_per_day`, `coffee_picture`, `cooking_frequency`, `cuisine`, `current_diet_short`, etc.</i><br />
-    
-    And this is what the above screenshot looks like after the trasfrormation. </p>
-  ![Screenshot of before](images/data_transformation_after.png)
+2. <b>Now to the Data Tranformation.</b><br/>
+      The columns to be fixed include:  <i>`Gender`, `breakfast`, `calorie_per_day`, `coffee_picture`, `cooking_frequency`, `cuisine`, `current_diet_short`, etc.</i>
   
-  
+     And this is what the columns look like after the trasfrormation.
+     
+    ![Screenshot of before](images/data_transformation_after.png)
+    <br/><br/>
     ...the complete code for this section can be found [here.](SQL_Files/SQL_Files/data_trasfrmation.sql)
-
-<!-- Listed below are the colomns that were fixed.<br />
-      <i>`Gender`, `breakfast`, `calorie_per_day`, `coffee_picture`, `cooking_frequency`, `cuisine`, `current_diet_short`, `drink_picture`, `eating_changes_short`, `eating_out`, `employment_status`, `ethnic_food`, `exercise`, `father_education_level`, `fav_cuisine_grouped`, `fav_food`, `fries_picture`, `fruit_per_day`, `grade_level`, `greek_food`, `do_you_feel_healthy`, `ideal_diet_short`, `income`, `indian_food`, `italian_food`, `is_life_rewarding`, `marital_status`, `mother_education_level`, `nutritional_check`, `residence`, `parents_cook` `pay_for_meal_out`, `persian_food`, `self_perception_weight`, `soup_picture`, `sports`, `thai_food`, `veggies_per_day`, `vitamins`.</i></p> -->
