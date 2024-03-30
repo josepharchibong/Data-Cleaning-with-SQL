@@ -174,7 +174,7 @@
     > When using multiple DDLs and DMLs like `DROP`, `ALTER`, & `INSERT INTO`, I use `TRANSACTIONS` to ensure data intergrity. Meaning if errors are encountered, all data modifications made after the BEGIN TRANSACTION can be rolled back to return the data to it's previous state of consistency. Each transaction lasts until either it completes without errors and COMMIT TRANSACTION is issued to make the modifications a permanent part of the database, or errors are encountered and all modifications are erased and the database automatically rolled back or with a ROLLBACK TRANSACTION statement.
   
 ---------------------------------------------------------------------
-* <b>Data Tranformation.</b>
+* <b>Data Tranformation:</b>
       <p>
       Most of the questions in the survey are close-ended, which means the students or anyone taking the survey would be limited to a range of possible responses - which are, in this case, numbered from 1 to 6.
       This makes the dataset have numbers scattered all over...
@@ -188,11 +188,9 @@
       ![Screenshot of before](images/data_transformation_after.png)
       <p>
       Listed below are the colomns that were fixed.<br />
-      <i>`Gender`, `breakfast`, `calorie_per_day`, `coffee_picture`, `cooking_frequency`, `cuisine`, `current_diet_short`, `drink_picture`, `eating_changes_short`, `eating_out`, `employment_status`, `ethnic_food`, `exercise`, `father_education_level`, `fav_cuisine_grouped`, `fav_food`, `fries_picture`, `fruit_per_day`, `grade_level`, `greek_food`, `do_you_feel_healthy`, `ideal_diet_short`, `income`, `indian_food`, `italian_food`, `is_life_rewarding`, `marital_status`, `mother_education_level`, `nutritional_check`, `residence`, `parents_cook` `pay_for_meal_out`, `persian_food`, `self_perception_weight`, `soup_picture`, `sports`, `thai_food`, `veggies_per_day`, `vitamins`.</i></p>
-  
-      <br />
+      <i>`Gender`, `breakfast`, `calorie_per_day`, `coffee_picture`, `cooking_frequency`, `cuisine`, `current_diet_short`, etc.</i></p>
       <br />   
-  
-    ...the complete code for this section can be found [here.](SQL_Files/inconsistent_data_&_nulls.sql)
+      ...the complete code for this section can be found [here.](SQL_Files/SQL_Files/data_trasfrmation.sql)
 
-*  for columns with numbers instead
+<!-- Listed below are the colomns that were fixed.<br />
+      <i>`Gender`, `breakfast`, `calorie_per_day`, `coffee_picture`, `cooking_frequency`, `cuisine`, `current_diet_short`, `drink_picture`, `eating_changes_short`, `eating_out`, `employment_status`, `ethnic_food`, `exercise`, `father_education_level`, `fav_cuisine_grouped`, `fav_food`, `fries_picture`, `fruit_per_day`, `grade_level`, `greek_food`, `do_you_feel_healthy`, `ideal_diet_short`, `income`, `indian_food`, `italian_food`, `is_life_rewarding`, `marital_status`, `mother_education_level`, `nutritional_check`, `residence`, `parents_cook` `pay_for_meal_out`, `persian_food`, `self_perception_weight`, `soup_picture`, `sports`, `thai_food`, `veggies_per_day`, `vitamins`.</i></p> -->
