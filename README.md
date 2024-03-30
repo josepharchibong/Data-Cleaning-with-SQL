@@ -171,13 +171,13 @@
     ...the complete code for the query can be found [here.](SQL_Files/fixing_data_type.sql)
 
     > [!TIP]
-    > When using multiple DDLs and DMLs like `DROP`, `ALTER`, & `INSERT INTO` I use `TRANSACTIONS` to ensure data intergrity. Meaning if errors are encountered, all data modifications made after the BEGIN TRANSACTION can be rolled back to return the data to this known state of consistency. Each transaction lasts until either it completes without errors and COMMIT TRANSACTION is issued to make the modifications a permanent part of the database, or errors are encountered and all modifications are erased with a ROLLBACK TRANSACTION statement.
+    > When using multiple DDLs and DMLs like `DROP`, `ALTER`, & `INSERT INTO`, I use `TRANSACTIONS` to ensure data intergrity. Meaning if errors are encountered, all data modifications made after the BEGIN TRANSACTION can be rolled back to return the data to it's previous state of consistency. Each transaction lasts until either it completes without errors and COMMIT TRANSACTION is issued to make the modifications a permanent part of the database, or errors are encountered and all modifications are erased and the database automatically rolled back or with a ROLLBACK TRANSACTION statement.
   
 ---------------------------------------------------------------------
 * <b>Data Tranformation.</b>
       <p>
       Most of the questions in the survey are close-ended, which means the students or anyone taking the survey would be limited to a range of possible responses - which are, in this case, numbered from 1 to 6.
-      This makes the dataset filled with numbers all over...
+      This makes the dataset have numbers scattered all over...
       </p> 
       ![Screenshot of before](images/data_transformation_before.png)
       <p>
