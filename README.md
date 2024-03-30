@@ -189,25 +189,9 @@
       <p>
       Listed below are the colomns that were fixed.<br />
       <i>`Gender`, `breakfast`, `calorie_per_day`, `coffee_picture`, `cooking_frequency`, `cuisine`, `current_diet_short`, `drink_picture`, `eating_changes_short`, `eating_out`, `employment_status`, `ethnic_food`, `exercise`, `father_education_level`, `fav_cuisine_grouped`, `fav_food`, `fries_picture`, `fruit_per_day`, `grade_level`, `greek_food`, `do_you_feel_healthy`, `ideal_diet_short`, `income`, `indian_food`, `italian_food`, `is_life_rewarding`, `marital_status`, `mother_education_level`, `nutritional_check`, `residence`, `parents_cook` `pay_for_meal_out`, `persian_food`, `self_perception_weight`, `soup_picture`, `sports`, `thai_food`, `veggies_per_day`, `vitamins`.</i></p>
-      <p>these are the rows <i><b>before...</i></b></p>
-      ![Screenshot of before](images/null,nan,nun_before.png)
+  
       <br />
-      <br />
-      <p>and these are the rows <i><b>after...</i></b></p>
-      ![Screenshot of after](images/null,nan,nun_after.png)
-      <br />
-      <br />
-      <p>
-      2. The columns <i>`comfort_food_reasons_short` & `sports`</i> have NULL values that could be corrected by cross-referencing data from other columns.
-      </p>
-      <p>these are the rows <i><b>before...</i></b></p>
-      ![Screenshot of before](images/cross_reference_before.png)
-      <br />
-      <br />
-      <p>and these are the rows <i><b>after...</i></b></p>
-      ![Screenshot of after](images/cross_reference_after.png)
-      <br />
-      <p>    
+      <br />   
   
     ...the complete code for this section can be found [here.](SQL_Files/inconsistent_data_&_nulls.sql)
 
