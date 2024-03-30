@@ -143,37 +143,9 @@
   
     ...the complete code for this section can be found [here.](SQL_Files/inconsistent_data_&_nulls.sql)
        <br />
+       
 ---------------------------------------------------------------------
 
-* <b>Data Formatting: Fixing the data type of some columns</b>
-    <p align="justify">
-    Most of the questions in the survey were objectives, which had 4 - 6 options varying per question. This made the entire dataset to be flooded with numbers. I'll be using the  document with the survey questions & answers to fix this. 
-    <br />
-    But before that, the data type for these columns have to correspond with whatever will be replacing those numbers. To do that i'll be using the <i>`ALTER TABLE` - `ALTER COLUMN`</i> statements.
-  </p>
-
-    ```SQL
-    -- Changing the Data Type for some colums
-    BEGIN TRANSACTION;
-
-    ALTER TABLE dbo.food_choices
-      ALTER COLUMN Gender nvarchar(10);
-    ALTER TABLE dbo.food_choices
-      ALTER COLUMN breakfast nvarchar(50);
-    .
-    .
-    .
-    ALTER TABLE dbo.food_choices
-      ALTER COLUMN vitamins nvarchar(50);
-    
-    COMMIT;
-    ```
-    ...the complete code for the query can be found [here.](SQL_Files/fixing_data_type.sql)
-
-    > [!TIP]
-    > When using multiple DDLs and DMLs like `DROP`, `ALTER`, & `INSERT INTO`, I use `TRANSACTIONS` to ensure data intergrity. Meaning if errors are encountered, all data modifications made after the BEGIN TRANSACTION can be rolled back to return the data to it's previous state of consistency. Each transaction lasts until either it completes without errors and COMMIT TRANSACTION is issued to make the modifications a permanent part of the database, or errors are encountered and all modifications are erased and the database automatically rolled back or with a ROLLBACK TRANSACTION statement.
-  
----------------------------------------------------------------------
 * <b>Data Tranformation: Replacing numbers with answers.</b>
       <p align="justify">
       Most of the questions in the survey are close-ended, which means the students or anyone taking the survey would be limited to a range of possible responses - which are, in this case, numbered from 1 to 6.
@@ -202,7 +174,11 @@
     COMMIT;
     ```
     ...the complete code for the query can be found [here.](SQL_Files/fixing_data_type.sql)
-<br/><br/>
+
+    > [!TIP]
+    > When using multiple DDLs and DMLs like `DROP`, `ALTER`, & `INSERT INTO`, I use `TRANSACTIONS` to ensure data intergrity. Meaning if errors are encountered, all data modifications made after the BEGIN TRANSACTION can be rolled back to return the data to it's previous state of consistency. Each transaction lasts until either it completes without errors and COMMIT TRANSACTION is issued to make the modifications a permanent part of the database, or errors are encountered and all modifications are erased and the database automatically rolled back or with a ROLLBACK TRANSACTION statement.
+
+<br/>
 
 2. <b>Now to the Data Tranformation.</b><br/>
       The columns to be fixed include:  <i>`Gender`, `breakfast`, `calorie_per_day`, `coffee_picture`, `cooking_frequency`, `cuisine`, `current_diet_short`, etc.</i>
