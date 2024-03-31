@@ -1,3 +1,4 @@
+-- Select staement to verify the columns to be fixed
 SELECT	Gender, breakfast, calorie_per_day, coffee_picture, cooking_frequency, cuisine, 
 		current_diet_short, drink_picture, eating_changes_short, eating_out, employment_status, 
 		ethnic_food, exercise, father_education_level, fav_cuisine_grouped, fav_food, fries_picture,
@@ -6,3 +7,52 @@ SELECT	Gender, breakfast, calorie_per_day, coffee_picture, cooking_frequency, cu
 		parents_cook, pay_for_meal_out, persian_food, self_perception_weight, soup_picture, sports, thai_food,
 		veggies_per_day, vitamins
 FROM dbo.food_choices
+;
+
+
+BEGIN TRANSACTION;
+
+-- Fixing the Gender Column
+UPDATE dbo.food_choices
+SET Gender = CASE
+				WHEN Gender = 1 THEN 'Female'
+				WHEN Gender = 2 THEN 'Male'
+			END
+;
+-- Fixing the breakfast Column
+UPDATE dbo.food_choices
+SET breakfast = CASE
+					WHEN breakfast = 1 THEN 'Cereal'
+					WHEN breakfast = 2 THEN 'Donut'
+				END
+;
+-- Fixing the calorie_per_day Column
+UPDATE dbo.food_choices
+SET calorie_per_day = CASE
+						WHEN calorie_per_day = 1 THEN 'I dont know many calories I should consume' 
+						WHEN calorie_per_day = 2 THEN 'It is not at all important'
+						WHEN calorie_per_day = 3 THEN 'It is moderately important'
+						WHEN calorie_per_day = 4 THEN 'It is very important'
+					END	
+;
+-- Fixing the coffee_picture Column
+UPDATE dbo.food_choices
+SET coffee_picture = CASE
+						WHEN coffee_picture = 1 THEN 'Creamy Frappuccino' 
+						WHEN coffee_picture = 2 THEN 'Espresso '
+					END	
+;
+-- Fixing the comfort_food_reasons Column
+UPDATE dbo.food_choices
+SET calorie_per_day = CASE
+						WHEN calorie_per_day = 1 THEN 'Stress' 
+						WHEN calorie_per_day = 2 THEN 'Boredom'
+						WHEN calorie_per_day = 3 THEN 'Depression/Sadness'
+						WHEN calorie_per_day = 4 THEN 'Hunger'
+						WHEN calorie_per_day = 5 THEN 'Laziness'
+						WHEN calorie_per_day = 6 THEN 'Cold Weather'
+						WHEN calorie_per_day = 7 THEN 'Happiness'
+						WHEN calorie_per_day = 8 THEN 'Watching TV'
+						WHEN calorie_per_day = 9 THEN 'None'
+					END	
+;
