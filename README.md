@@ -187,4 +187,4 @@
      
     ![Screenshot of before](images/data_transformation_after.png)
     <br/><br/>
-    ...the complete code for this section can be found [here.](SQL_Files/SQL_Files/data_trasfrmation.sql)
+    ...the complete code for this section can be found [here.](SQL_Files/data_trasformation.sql)
