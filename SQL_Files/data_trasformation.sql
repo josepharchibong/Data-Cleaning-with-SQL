@@ -45,14 +45,14 @@ SET coffee_picture = CASE
 -- Fixing the comfort_food_reasons Column
 UPDATE dbo.food_choices
 SET calorie_per_day = CASE
-						WHEN calorie_per_day = 1 THEN 'Stress' 
-						WHEN calorie_per_day = 2 THEN 'Boredom'
-						WHEN calorie_per_day = 3 THEN 'Depression/Sadness'
-						WHEN calorie_per_day = 4 THEN 'Hunger'
-						WHEN calorie_per_day = 5 THEN 'Laziness'
-						WHEN calorie_per_day = 6 THEN 'Cold Weather'
-						WHEN calorie_per_day = 7 THEN 'Happiness'
-						WHEN calorie_per_day = 8 THEN 'Watching TV'
-						WHEN calorie_per_day = 9 THEN 'None'
+						WHEN comfort_food_reasons = 1 THEN 'Stress' 
+						WHEN comfort_food_reasons = 2 THEN 'Boredom'
+						WHEN comfort_food_reasons = 3 THEN 'Depression/Sadness'
+						WHEN comfort_food_reasons = 4 THEN 'Hunger'
+						WHEN comfort_food_reasons = 5 THEN 'Laziness'
+						WHEN comfort_food_reasons = 6 THEN 'Cold Weather'
+						WHEN comfort_food_reasons = 7 THEN 'Happiness'
+						WHEN comfort_food_reasons = 8 THEN 'Watching TV'
+						WHEN comfort_food_reasons = 9 THEN 'None'
 					END	
 ;
